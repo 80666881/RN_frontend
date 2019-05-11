@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Button,TextInput,Text,View,TouchableOpacity,StyleSheet} from 'react-native'
+
 class AddTodo extends Component {
     render() {
         return (
@@ -21,6 +22,7 @@ class AddTodo extends Component {
         this.props.addTodo(this.props.text)
     }
     fetchFromApi = ()=>{
+        console.log('fetch api')
         this.props.fetchFromApi()
     }
 
