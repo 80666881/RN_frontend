@@ -54,7 +54,15 @@ export const fetchTodos = ()=>{
             }
         });
         dispatch(fetchTodosRequest())
-        return fetch('https://easy-mock.com/mock/5cd63b577f8f72433eeaa108/example/todos').then(
+        return fetch('https://easy-mock.com/mock/5cd63b577f8f72433eeaa108/example/todos',{
+            method: 'GET',
+
+        headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json;charset=utf-8'
+
+              },
+        }).then(
             response =>{
                 response.json().then(data=>{
                     dispatch(fetchTodoSuccess(data.data))
